@@ -1,0 +1,281 @@
+#root {
+  max-width: 1280px;
+  min-height: 1000px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+}
+
+/* 
+.card {
+  padding: 2em;
+} */
+
+/* .read-the-docs {
+  color: #888;
+} */
+
+/* Sidebar collapse transition */
+.collapsed {
+  transition: width 0.3s ease;
+}
+
+.sidebar .nav-item {
+  transition: opacity 0.3s ease;
+}
+
+/* Optional: hide content in collapsed mode */
+.collapsed .nav-link,
+.collapsed h4 {
+  opacity: 0;
+}
+
+
+.innoh:hover {
+  background-color: rgba(21, 61, 172, 0.57);
+  border-radius: 20px;
+  border-color: black;
+  color: wheat;
+}
+
+.Homepage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* .getstarted {
+  border-radius: 20px;
+}
+
+.getstarted:hover {
+  background-color: rgba(21, 61, 172, 0.57);
+  border-radius: 20px;
+  border-color: black;
+  color: wheat;
+} */
+
+.btn {
+  border-radius: 20px;
+  transition: all 0.8s ease;
+}
+
+.btn:hover {
+  background-color: rgba(21, 61, 172, 0.57);
+  border-radius: 25px;
+  border-color: black;
+  color: wheat;
+}
+
+.product_img {
+  object-fit: contain;
+  width: 100%;
+  height: 100px;
+}
+
+.App {
+  background: linear-gradient(to right, #3384db, #2e4694); /* Gradient background */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+}
+
+/* Gradient text styling */
+.gradient-text {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animation for letters appearing one by one */
+.animated-text h1, .animated-text p {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(30, end), blink 0.5s step-end infinite alternate;
+  border-right: 2px solid transparent; /* Simulate typing cursor */
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Keyframes for blinking cursor */
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: black;
+  }
+}
+
+/* Style for nav-links */
+.nav-link {
+  position: relative;
+  font-style: italic;
+  text-decoration: none;
+  color: inherit; /* Keep the text color as defined in the JSX */
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Thickness of the green line */
+  background-color: green; /* Color of the line */
+  transition: width 0.3s ease; /* Smooth transition for the line */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Expand the line to full width on hover */
+}
+
+.navbar-brand {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+.products {
+  background-image: url('/images/kayc.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%; 
+}
+
+/* Splash screen container */
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(to right, #1b5fa8, #31c95c); /* Background gradient */
+  color: black;
+  text-align: center;
+  animation:reverse 3s forwards; /* Fade out animation */
+}
+
+/* Splash text animation */
+.splash-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  animation: slideIn 1.5s ease-out; /* Slide-in animation */
+}
+
+.splash-subtext {
+  font-size: 1.5rem;
+  animation: fadeIn 2s ease-in; /* Fade-in animation */
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Keyframes for fade-out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.glowing-div {
+  box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.6); /* Yellow glow effect */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  padding: 20px; /* Optional: Add padding inside the div */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.glowing-div:hover {
+  box-shadow: 0 0 25px 10px rgba(255, 255, 0, 0.8); /* Stronger glow on hover */
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social-media-icons a img {
+  transition: transform 0.3s ease;
+}
+
+.social-media-icons a img:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align the modal at the top */
+  padding-top: 50px; /* Add some space from the top */
+  z-index: 1050; /* Ensure it appears above all other components */
+}
+
+.modal-content {
+  background: black;
+  width: 300px; /* Set a fixed width */
+  height: 300px; /* Set a fixed height */
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100; /* Ensure it appears above the overlay */
+}
+
+.modal-content .d-flex {
+  width: 100%; /* Ensure buttons take full width */
+}
+
+.modal-content button {
+  flex: 1; /* Make buttons equal in size */
+  margin: 0 5px; /* Add spacing between buttons */
+}
