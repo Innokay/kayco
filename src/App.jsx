@@ -10,17 +10,16 @@ import CubeCarousel from './components/carousel/Carousel';
 
 import HomePage from './components/HomePage';
 import Map from './components/Map';
-import AdminDashboard from './components/AdminDashboard';
 import Cart from './components/Cart';
 import AddProduct from './components/AddProduct';
 import ForgotPassword from './components/ForgotPassword';
 import Signin from './components/SignIn';
+import Admin from './components/Admin';
 import Signup from './components/Signup';
 import UserDashboard from './components/UserDashboard';
 import About from './components/About';
 import ContactTeam from './components/ContactTeam';
 import SingleProduct from './components/SingleProduct';
-import Category from './components/Category';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true); // State to control splash screen
@@ -73,9 +72,8 @@ function App() {
                 <Route path="/contact" element={<ContactTeam />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/clientdashboard" element={<UserDashboard />} />
-                <Route path="/admindashboard" element={<AdminDashboard />} />
+                <Route path="/admin" element={<Admin />} />
               </Routes>
-              <Category />
             </div>
           </div>
         </div>

@@ -10,19 +10,19 @@ const CubeCarousel = () => {
           <img src="/images/kayscollectionlogo.png" alt="Front" />
         </div>
         <div className="face back">
-          <img src="https://via.placeholder.com/200?text=Back" alt="Back" />
+          <img src="/images/jewelery.jpg" alt="Back" />
         </div>
         <div className="face left">
-          <img src="https://via.placeholder.com/200?text=Left" alt="Left" />
+          <img src="/images/menclothes.jpg" alt="Left" />
         </div>
         <div className="face right">
-          <img src="https://via.placeholder.com/200?text=Right" alt="Right" />
+          <img src="/images/nike.jpg" alt="Right" />
         </div>
         <div className="face top">
-          <img src="https://via.placeholder.com/200?text=Top" alt="Top" />
+          <img src="/images/fashion.jpg" alt="Top" />
         </div>
         <div className="face bottom">
-          <img src="https://via.placeholder.com/200?text=Bottom" alt="Bottom" />
+          <img src="/images/ladiesheels.avif" alt="Bottom" />
         </div>
       </div>
     </div>

@@ -31,6 +31,10 @@ const Signin = () => {
             console.log("API Response:", response);
 
             if (response.status === 200 && response.data.user) {
+                console.log("Stored user:", response.data.user);
+                localStorage.setItem("user", JSON.stringify(response.data.user));
+
+
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 setShowModal(true); // Show the popup/modal
             } else if (response.data.error) {
@@ -54,8 +58,9 @@ const Signin = () => {
 
     const handleSeeDashboard = () => {
         const user = JSON.parse(localStorage.getItem("user")); // Retrieve user data from localStorage
-        if (user && user.category === "admin") {
-            navigate("/admindashboard"); // Navigate to the admin dashboard
+        console.log("User category:", user?.category); // Debugging
+        if (user && user.category && user.category.toLowerCase() === "admin") {
+            navigate("/admin"); // Navigate to the admin dashboard
         } else {
             navigate("/clientdashboard"); // Navigate to the client dashboard
         }
