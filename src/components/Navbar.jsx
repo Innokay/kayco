@@ -29,7 +29,6 @@ const Navbar = () => {
                                 <div className="collapse navbar-collapse" id="navbarCollapse">
                                     <div className="navbar-nav">
                                         <Link to="/" className="nav-link text-info">Home</Link>
-                                        <Link to="/addproduct" className="nav-link text-info">Add Product</Link>
                                         <Link to="/map" className="nav-link text-info">View Map</Link>
                                     </div>
                                     <div className="navbar-nav ms-auto text-uppercase">
