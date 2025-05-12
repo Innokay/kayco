@@ -7,7 +7,7 @@
 //   const cart = location.state?.cart || []; // Retrieve cart items from state
 
 //   // Calculate the total amount
-//   const totalAmount = cart.reduce((total, product) => total + product.product_cost * product.quantity, 0);
+//   const totalAmount = cart.reduce((total, product)=> total + product.product_cost * product.quantity, 0);
 
 //   const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
 //   const [phone, setPhone] = useState(""); // State for M-Pesa number
@@ -40,6 +40,11 @@
 //       const response = await axios.post("https://Innoh.pythonanywhere.com/api/mpesa_payment", data);
 //       setLoading("");
 //       setSuccess(response.data.message);
+
+//       // Automatically close the popup after 3 seconds
+//       setTimeout(() => {
+//         handleClosePopup();
+//       }, 3000);
 //     } catch (error) {
 //       setLoading("");
 //       setError(error.message);
@@ -54,8 +59,8 @@
 //       ) : (
 //         <>
 //           <div className="row">
-//             {cart.map((product, index) => (
-//               <div className="col-md-4 mb-4" key={index}>
+//             {cart.map((product) => (
+//               <div className="col-md-4 mb-4" key={product.id || product.product_name}>
 //                 <div className="card shadow">
 //                   <img
 //                     src={`https://Innoh.pythonanywhere.com/static/images/${product.product_photo}`}
@@ -65,9 +70,6 @@
 //                   <div className="card-body">
 //                     <h5 className="card-title">{product.product_name}</h5>
 //                     <p className="card-text">{product.product_desc}</p>
-//                     <p className="card-text">
-//                       <b>Product Number:</b> {index + 1}
-//                     </p>
 //                     <p className="card-text">
 //                       <b>Price:</b> {product.product_cost} Ksh
 //                     </p>
@@ -139,11 +141,10 @@
 
 import axios from "axios";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useCart } from "../components/CartContext"; // Import the CartContext
 
 const Cart = () => {
-  const location = useLocation();
-  const cart = location.state?.cart || []; // Retrieve cart items from state
+  const { cart, dispatch } = useCart(); // Access cart and dispatch from context
 
   // Calculate the total amount
   const totalAmount = cart.reduce((total, product) => total + product.product_cost * product.quantity, 0);
@@ -190,6 +191,10 @@ const Cart = () => {
     }
   };
 
+  const handleAddToCart = (product) => {
+    dispatch({ type: "ADD_TO_CART", payload: product }); // Add product to cart using context
+  };
+
   return (
     <div className="container mt-4">
       <h1 className="text-center">Your Cart</h1>
@@ -198,8 +203,8 @@ const Cart = () => {
       ) : (
         <>
           <div className="row">
-            {cart.map((product, index) => (
-              <div className="col-md-4 mb-4" key={index}>
+            {cart.map((product) => (
+              <div className="col-md-4 mb-4" key={product.id || product.product_name}>
                 <div className="card shadow">
                   <img
                     src={`https://Innoh.pythonanywhere.com/static/images/${product.product_photo}`}
@@ -210,9 +215,6 @@ const Cart = () => {
                     <h5 className="card-title">{product.product_name}</h5>
                     <p className="card-text">{product.product_desc}</p>
                     <p className="card-text">
-                      <b>Product Number:</b> {index + 1}
-                    </p>
-                    <p className="card-text">
                       <b>Price:</b> {product.product_cost} Ksh
                     </p>
                     <p className="card-text">
@@ -221,6 +223,12 @@ const Cart = () => {
                     <p className="card-text">
                       <b>Subtotal:</b> {product.product_cost * product.quantity} Ksh
                     </p>
+                    <button
+                      className="btn btn-primary mt-2"
+                      onClick={() => handleAddToCart(product)}
+                    >
+                      Add More to Cart
+                    </button>
                   </div>
                 </div>
               </div>

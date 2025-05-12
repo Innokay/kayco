@@ -33,6 +33,7 @@
 
 .innoh:hover {
   background-color: rgba(21, 61, 172, 0.57);
+  transition: all 0.8s ease;
   border-radius: 20px;
   border-color: black;
   color: wheat;
@@ -77,7 +78,7 @@
 }
 
 .App {
-  background: linear-gradient(to right, #3384db, #2e4694); /* Gradient background */
+  background: linear-gradient(to right, #3bd87c, #2e4694); /* Gradient background */
   min-height: 100vh; /* Ensure it covers the full viewport height */
 }
 

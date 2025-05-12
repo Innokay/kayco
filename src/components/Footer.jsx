@@ -29,13 +29,14 @@ const Footer = () => {
       setMessage("Message sent successfully!");
       setFormData({ email: "", comment: "" });
     } catch (error) {
-      setMessage("Failed to send message.");
+      setMessage("Received. See you soon!");
+      console.error("Error sending message:", error);
     }
   };
 
   return (
     <div className="justify-content-center">
-      <section className="row bg-secondary p-4">
+      <section className="row innoh p-4">
         <div className="col-md-4 text-dark">
           <h4 className="text-white text-uppercase">Our Location</h4>
           <p>

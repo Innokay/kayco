@@ -2,7 +2,8 @@ import React from 'react';
 
 const ContactTeam = () => {
   return (
-    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+    <div className='col-md-12 bg-dark text-white card shadow'>
+         <div style={{ textAlign: 'center', marginTop: '20px' }}>
       <h2>Contact Our Team</h2>
       <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px' }}>
         {/* Facebook */}
@@ -32,10 +33,12 @@ const ContactTeam = () => {
         <p>You can also order for a good, we will get it delivered in minutes. We are you!</p>
         <p>Dear Customer, you are important to us. Please leave comments, complimentaries or complaints here</p>
     </div>
-      <button className="btn btn-dark" onClick={() => window.location.href = 'mailto:kayscollection921@gmail.com'}>
+      <button className="btn btn-success" onClick={() => window.location.href = 'mailto:kayscollection921@gmail.com'}>
         Email Us
       </button>
     </div>
+    </div>
+   
   );
 };
 

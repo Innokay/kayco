@@ -13,13 +13,6 @@ const About = () => {
       <p className='text-danger'>Happy shopping!</p>
       <Link to="/contact">Contact Us</Link>
       <marquee behavior="" direction="">We are the leading ecommerce platform. Try us and you'll never regret</marquee>
-
-      <section className="row">
-        <div className="col-md-12 card bg-dark justify-content-center">
-          <h1>View Our Map</h1>
-          <Map />
-        </div>
-      </section>
     </div>
   )
 }
